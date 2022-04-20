@@ -1,0 +1,27 @@
+<p>view-customer works!</p>
+
+
+<table class = "table table-stripped">
+  <thead>
+    <tr>
+      <th>Customer Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Gender</th>
+      <th>Pan Number</th>
+      <th>Mobile Number</th>
+      <th>Email Id</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let dataItem of CustomerList">
+          <td>{{dataItem.id}}</td>
+          <td>{{dataItem.name}}</td>
+          <td>{{dataItem.address}}</td>
+          <td>{{dataItem.gender}}</td>
+          <td>{{dataItem.panNumber}}</td>
+          <td>{{dataItem.mobileNumber}}</td>
+          <td>{{dataItem.emailId}}</td>
+
+        </tbody>
+        </table>

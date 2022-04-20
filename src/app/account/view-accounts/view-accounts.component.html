@@ -1,0 +1,32 @@
+<!-- Button trigger modal -->
+<p>view-account works!</p>
+
+  <button routerLink = "add"
+  class = "m-1 btn btn-light btn-outline-primary" Button>Add Account</button>
+
+<table class = "table table-stripped">
+  <thead>
+    <tr>
+      <th>Account Id</th>
+      <th>Customer Id</th>
+      <th>Account Type</th>
+      <th>Balance</th>
+      <th>Options</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let dataItem of AccountList">
+          <td>{{dataItem.id}}</td>
+          <td>{{dataItem.customerId}}</td>
+          <td>{{dataItem.accountType}}</td>
+          <td>{{dataItem.balance}}</td>
+          <td>
+            <button type = "button" class = "btn btn-outline-dark" routerLink = "update/{{dataItem.id}}">
+              Edit
+              </button>
+              <button type = "button" class = "btn btn-outline-dark"
+              (click) = "deleteClick(dataItem)" >
+                Delete
+                </button>
+        </tbody>
+        </table>

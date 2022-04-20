@@ -1,0 +1,38 @@
+<p>add-edit-account works!</p>
+
+<form #userPost = "ngForm" (ngSubmit)="onSubmit(userPost.value)">
+  <div class="form-group">
+    <label>Account Number</label>
+    <input type="text" class="form-control" name = "id"
+    placeholder="Generated Automatically" readonly>
+  </div>
+  <div class="form-group">
+    <label>Customer ID</label>
+    <input type="text" class="form-control" name = "customerId"
+    required #id ="ngModel"
+    placeholder="Enter Customer ID" ngModel>
+    <span *ngIf = "id.invalid && id.touched"  style="color:red;">
+      Please Enter a Valid Input</span>
+  </div>
+
+  <div class="form-group">
+    <label>Account Type</label>
+    <input type="text" class="form-control" name = "accountType"
+    required #accountType ="ngModel" pattern = "[a-zA-Z]+$"
+    placeholder="Savings OR Current" ngModel>
+    <span *ngIf = "accountType.invalid && accountType.touched"  style="color:red;">
+      Please Enter a Valid Input</span>
+
+  </div>
+
+  <div class="form-group">
+    <label>Initial Balance</label>
+    <input type="text" class="form-control" name = "balance"
+    required #balance = "ngModel"
+    placeholder="Initial Balance" ngModel >
+    <span *ngIf = "balance.invalid && balance.touched" style="color:red;">
+      Please Enter a Valid Input</span>
+  </div>
+
+  <button [disabled] = userPost.invalid type="submit" class="btn btn-primary">Submit</button>
+</form>

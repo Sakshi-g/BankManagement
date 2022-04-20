@@ -1,0 +1,21 @@
+<p>view-transactions works!</p>
+
+<table class = "table table-stripped">
+  <thead>
+    <tr>
+      <th>Transaction Id</th>
+      <th>Account Id</th>
+      <th>Transaction Type</th>
+      <th>Amount</th>
+      <th>Time</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let dataItem of TransactionList">
+          <td>{{dataItem.id}}</td>
+          <td>{{dataItem.accountNumber}}</td>
+          <td>{{dataItem.type}}</td>
+          <td>{{dataItem.amount}}</td>
+          <td>{{dataItem.addedOn}}</td>
+        </tbody>
+        </table>
